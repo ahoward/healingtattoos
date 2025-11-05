@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Marks - Jessica Sharratt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Garamond', serif;
+            background: #F8F6F3;
+            color: #3A3A3A;
+            line-height: 1.9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 30px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .logo {
+            font-size: 2.5em;
+            font-weight: 400;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+            color: #8B7355;
+            text-transform: uppercase;
+        }
+
+        .intro {
+            font-size: 1.25em;
+            line-height: 2;
+            color: #666;
+            margin-bottom: 80px;
+            font-style: italic;
+            text-align: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .statement {
+            background: rgba(139, 115, 85, 0.08);
+            padding: 50px;
+            border-radius: 8px;
+            margin-bottom: 80px;
+            border-left: 3px solid #C4A27C;
+        }
+
+        .statement p {
+            font-size: 1.15em;
+            line-height: 2;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .statement p:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #8B7355;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section p {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        .simple-list {
+            list-style: none;
+            margin: 40px 0;
+        }
+
+        .simple-list li {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.2);
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        .simple-list li:last-child {
+            border-bottom: none;
+        }
+
+        .emphasis {
+            background: rgba(139, 115, 85, 0.05);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .emphasis p {
+            font-size: 1.3em;
+            line-height: 1.8;
+            color: #8B7355;
+            font-style: italic;
+        }
+
+        .bio {
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            margin: 80px 0;
+            border-top: 3px solid #C4A27C;
+        }
+
+        .bio h3 {
+            font-size: 1.5em;
+            margin-bottom: 25px;
+            color: #8B7355;
+            font-weight: 400;
+        }
+
+        .bio p {
+            font-size: 1.05em;
+            line-height: 2;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .credentials {
+            color: #999;
+            font-size: 0.95em;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(139, 115, 85, 0.2);
+        }
+
+        .contact {
+            text-align: center;
+            padding: 60px 0;
+            margin-top: 60px;
+            border-top: 1px solid rgba(139, 115, 85, 0.2);
+        }
+
+        .contact p {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .contact a {
+            display: inline-block;
+            padding: 18px 45px;
+            background: #8B7355;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1em;
+            transition: background 0.3s;
+            letter-spacing: 1px;
+        }
+
+        .contact a:hover {
+            background: #6F5C47;
+        }
+
+        blockquote {
+            font-size: 1.2em;
+            line-height: 2;
+            color: #8B7355;
+            font-style: italic;
+            margin: 60px 0;
+            padding-left: 40px;
+            border-left: 3px solid #C4A27C;
+        }
+
+        .quiet {
+            font-size: 0.95em;
+            color: #999;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            .logo {
+                font-size: 2em;
+                letter-spacing: 4px;
+            }
+
+            .intro {
+                font-size: 1.1em;
+            }
+
+            .statement {
+                padding: 30px;
+            }
+
+            h2 {
+                font-size: 1.6em;
+            }
+
+            blockquote {
+                padding-left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="logo">Sacred Marks</h1>
+        </header>
+
+        <div class="intro">
+            One in four pregnancies end in loss. If you're here, you know this isn't just a statistic.
+        </div>
+
+        <div class="statement">
+            <p>
+                I've walked this path. Three times, my arms have been empty when they should have been full.
+                Three times, I've felt the silence, the isolation, the desperate need for something—anything—to
+                make the invisible visible.
+            </p>
+            <p>
+                I'm Jessica. I'm a Chinese medicine doctor, a fertility specialist, and a death doula.
+                But before any of that professional training, I'm a bereaved mother who understands
+                what it means when people don't know what to say. When your loss doesn't get acknowledged.
+                When you need your baby's brief existence to matter.
+            </p>
+            <p>
+                This is why I do memorial tattoo work. Not as a business model, but as sacred work.
+                Because I know what helps, and what doesn't. Because I know that sometimes the only thing
+                that makes sense is a permanent mark for a permanent hole in your heart.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>What I Offer</h2>
+
+            <p>
+                This isn't about pretty tattoos (though they are beautiful). This is about making
+                your baby real to a world that wanted to move on too quickly. This is about having
+                something you can touch when the grief hits. This is about not being alone.
+            </p>
+
+            <ul class="simple-list">
+                <li><strong>Pregnancy Loss & Miscarriage Memorial</strong> — For those of us who lost babies the world never saw. Simple symbols, dates that matter, permanent proof they existed.</li>
+
+                <li><strong>Stillbirth & Infant Death Memorial</strong> — Using actual footprints, handprints, names. Honoring babies who were here, however briefly.</li>
+
+                <li><strong>Failed IVF & Fertility Journey Memorial</strong> — For embryos that didn't make it, treatments that didn't work, the version of yourself you thought you'd be.</li>
+
+                <li><strong>Rainbow Baby Honoring</strong> — When joy and grief live together. Holding space for both your angel baby and the one in your arms.</li>
+            </ul>
+        </div>
+
+        <blockquote>
+            "Your baby's story deserves to be told. Let me help you tell it."
+        </blockquote>
+
+        <div class="section">
+            <h2>How This Works</h2>
+
+            <p>
+                First, we talk. Free consultation, no pressure, just space to share your story.
+                I'll ask about your baby, your loss, what you need this tattoo to do for you.
+                Sometimes people are ready right away. Sometimes they need time. Both are okay.
+            </p>
+
+            <p>
+                I work with hand-poke (stick-and-poke) method. It's gentler, heals faster,
+                and honestly, it feels more intentional. Less like getting tattooed, more like
+                ceremony. The sessions are private. You can bring your partner, a friend, whoever
+                you need. We can be silent or you can talk about your baby the whole time.
+            </p>
+
+            <p>
+                I combine this with my training in Chinese medicine (therapeutic acupoint placement),
+                death doula work (holding space for grief), and my own experience of loss.
+                This isn't transactional. This is witnessing.
+            </p>
+        </div>
+
+        <div class="emphasis">
+            <p>Sliding scale pricing. Payment plans. I will never turn someone away because they can't afford it.</p>
+        </div>
+
+        <div class="section">
+            <h2>What People Say</h2>
+
+            <p style="font-style: italic; color: #999; margin-bottom: 30px;">
+                (I'm just beginning this work publicly, but here's what I know from my own experience
+                and from holding space with other bereaved parents:)
+            </p>
+
+            <p>
+                Memorial tattoos don't fix grief. They don't bring babies back. But they do something
+                important: they make the loss visible. They give you something to touch when you need
+                to feel close. They tell the world "this happened, this mattered, this baby is mine."
+            </p>
+
+            <p>
+                Research shows memorial tattoos help with continuing bonds—staying connected to your
+                baby in a new way. They reduce isolation. They give you back some control in a
+                situation where you had none.
+            </p>
+
+            <p>
+                Mostly, they just help. And when you're drowning in grief, "helps" is enough.
+            </p>
+        </div>
+
+        <div class="bio">
+            <h3>About Jessica</h3>
+
+            <p>
+                I'm a bereaved mom first, practitioner second. Everything I offer comes from that
+                lived experience of pregnancy loss. But I also bring professional training that matters
+                for this work:
+            </p>
+
+            <p>
+                PhD in Chinese Medicine. I understand how acupoints work, how the body holds grief,
+                how placement on meridians can support ongoing healing.
+            </p>
+
+            <p>
+                Fertility specialist. I know the language of embryo grades and beta numbers and
+                crushing disappointment. I've sat with patients through losses and held space for
+                what comes next.
+            </p>
+
+            <p>
+                Death doula. I'm trained to support people through dying and grief. I know how to
+                witness loss without trying to fix it. I know how to hold ceremony.
+            </p>
+
+            <p>
+                But really, I'm just someone who gets it. Who won't tell you "everything happens for
+                a reason" or "at least you can get pregnant." Who knows that grief doesn't have a
+                timeline and your baby's brief life deserves to be honored.
+            </p>
+
+            <div class="credentials">
+                Jessica Sharratt, PhD (Chinese Medicine) · Fertility Specialist · Birth & Death Doula ·
+                Mother of three angels
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>A Note on Logistics</h2>
+
+            <p>
+                I'm building this practice to be location-independent. Right now, I offer virtual
+                consultations and design sessions (I can serve you anywhere). For the actual tattoo,
+                I can either travel to you for concentrated sessions, or we can plan for you to come
+                to me during scheduled pop-up clinics in various cities.
+            </p>
+
+            <p>
+                The memorial work side of this practice is sliding scale, always. Packages range from
+                $400-2,500 depending on size and complexity, but I work with every budget. Payment plans
+                available. Some families have funeral donations or baby shower money they redirect.
+                Sometimes partners split it. Sometimes your support system contributes.
+            </p>
+
+            <p>
+                Money should never be the barrier between you and honoring your baby.
+            </p>
+        </div>
+
+        <div class="emphasis">
+            <p>"Making invisible loss visible. Creating permanent connection where temporary existence lived."</p>
+        </div>
+
+        <div class="contact">
+            <p>If you're here, I see you. Your baby matters. Your grief is real.</p>
+            <a href="https://instagram.com/jcsharratt" target="_blank">Let's Talk</a>
+            <p class="quiet">
+                Instagram: @jcsharratt<br>
+                Free consultation · No pressure · Just space to share your story
+            </p>
+        </div>
+    </div>
+</body>
+</html>
