@@ -6,6 +6,14 @@ This repository documents research and planning for a therapeutic tattooing prac
 
 **Practitioner**: [JC Sharratt](https://www.instagram.com/jcsharratt/)
 
+## 🌐 Preview Sites
+
+**Live concept exploration**: https://ahoward.github.io/healingtattoos/
+
+Browse different voice and design approaches for this memorial work, ranging from personal/intimate to professional/clinical. The authentic voice versions (leading with Jessica's lived experience) are prioritized.
+
+---
+
 ## Core Concept
 
 **Healing tattoos** combine:
