@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threshold Studios - Transform Through Ink</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: #0A0A0A;
+            color: #FFFFFF;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 40px 30px;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 3.5em;
+            font-weight: 900;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 50%, #4ECDC4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.1em;
+            color: #888;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero {
+            padding: 100px 30px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(78, 205, 196, 0.1) 0%, transparent 100%);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            color: #CCC;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-size: 3.5em;
+            font-weight: 900;
+            background: linear-gradient(135deg, #4ECDC4 0%, #FFE66D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-stat-label {
+            font-size: 0.9em;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
+
+        .section {
+            padding: 80px 30px;
+        }
+
+        .section-title {
+            font-size: 3em;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: #888;
+            margin-bottom: 60px;
+        }
+
+        .offerings {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .offering {
+            background: linear-gradient(135deg, rgba(78, 205, 196, 0.1) 0%, rgba(255, 107, 107, 0.1) 100%);
+            padding: 50px 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s, border-color 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offering::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #FF6B6B 0%, #FFE66D 50%, #4ECDC4 100%);
+        }
+
+        .offering:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .offering-number {
+            font-size: 4em;
+            font-weight: 900;
+            opacity: 0.1;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+
+        .offering h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .offering p {
+            color: #CCC;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        .manifesto {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.15) 0%, rgba(78, 205, 196, 0.15) 100%);
+            padding: 100px 30px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .manifesto h2 {
+            font-size: 3.5em;
+            font-weight: 900;
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+
+        .manifesto-list {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            font-size: 1.3em;
+            line-height: 2.5;
+        }
+
+        .manifesto-list li {
+            margin-bottom: 20px;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .manifesto-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #4ECDC4;
+            font-weight: 900;
+            font-size: 1.5em;
+        }
+
+        .process {
+            padding: 80px 30px;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .process-step {
+            text-align: center;
+        }
+
+        .process-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            font-weight: 900;
+        }
+
+        .process-step h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .process-step p {
+            color: #888;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 100px 30px;
+            background: linear-gradient(135deg, rgba(255, 230, 109, 0.1) 0%, rgba(255, 107, 107, 0.1) 100%);
+        }
+
+        .cta-section h2 {
+            font-size: 3.5em;
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+
+        .cta-section p {
+            font-size: 1.3em;
+            color: #CCC;
+            margin-bottom: 50px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 25px 60px;
+            background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%);
+            color: #0A0A0A;
+            font-size: 1.2em;
+            font-weight: 900;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(255, 107, 107, 0.4);
+        }
+
+        footer {
+            padding: 60px 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer p {
+            color: #888;
+            margin: 10px 0;
+        }
+
+        footer a {
+            color: #4ECDC4;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5em;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero-stats {
+                gap: 30px;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .manifesto h2 {
+                font-size: 2em;
+            }
+
+            .manifesto-list {
+                font-size: 1.1em;
+            }
+
+            .offerings {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">THRESHOLD</h1>
+            <p class="tagline">Studios</p>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1>Transform<br>Through Ink</h1>
+            <p>
+                Where grief becomes visible. Where loss becomes legacy.
+                Where trauma transforms into power. Therapeutic tattooing
+                for life's most profound passages.
+            </p>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">5,300</div>
+                    <div class="hero-stat-label">Years of Healing</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">1 in 4</div>
+                    <div class="hero-stat-label">Need Memorial Work</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">100%</div>
+                    <div class="hero-stat-label">Intentional</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">Experience Offerings</h2>
+            <p class="section-subtitle">Curated healing experiences for transformation</p>
+
+            <div class="offerings">
+                <div class="offering">
+                    <div class="offering-number">01</div>
+                    <h3>Empty Arms</h3>
+                    <p>
+                        Memorial tattoos for pregnancy loss, stillbirth, infant death.
+                        Bereavement doula support + ceremonial ink. Making invisible
+                        loss permanently visible. You are not alone.
+                    </p>
+                </div>
+
+                <div class="offering">
+                    <div class="offering-number">02</div>
+                    <h3>Legacy Lab</h3>
+                    <p>
+                        Pre-death tattoo design for dying individuals. Create your
+                        final gift to loved ones. Virtual death doula support + design
+                        sessions + family ceremony. Reclaim agency in the dying process.
+                    </p>
+                </div>
+
+                <div class="offering">
+                    <div class="offering-number">03</div>
+                    <h3>Body Reclaim</h3>
+                    <p>
+                        Somatic trauma healing through intentional ink. Transform scars,
+                        trauma sites, disconnection into reclaimed territory. Multi-session
+                        nervous-system-aware approach. Your body, your rules.
+                    </p>
+                </div>
+
+                <div class="offering">
+                    <div class="offering-number">04</div>
+                    <h3>Touchstone</h3>
+                    <p>
+                        Micro therapeutic tattoos as daily mindfulness anchors. Acupoint
+                        placement for anxiety, fertility, grounding, pain relief. 30-minute
+                        sessions. Gateway to healing through embodied ritual.
+                    </p>
+                </div>
+
+                <div class="offering">
+                    <div class="offering-number">05</div>
+                    <h3>Fertility Intensive</h3>
+                    <p>
+                        Quarterly retreats combining TCM fertility wisdom, ear seed training,
+                        community circles, and ceremonial tattoo. 3-day transformation in
+                        beautiful locations. Virtual support between intensives.
+                    </p>
+                </div>
+
+                <div class="offering">
+                    <div class="offering-number">06</div>
+                    <h3>Ancestor Work</h3>
+                    <p>
+                        Intergenerational trauma alchemy. Release inherited burdens,
+                        embody ancestral gifts. Multi-session genealogy exploration +
+                        ritual ceremony + permanent marking bridging generations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="manifesto">
+        <div class="container">
+            <h2>Our Manifesto</h2>
+            <ul class="manifesto-list">
+                <li>Grief is not something to "get over" — it transforms</li>
+                <li>Your body holds stories your mind can't speak</li>
+                <li>Chosen pain can heal unchosen trauma</li>
+                <li>Invisible losses deserve visible honoring</li>
+                <li>Death is a threshold, not an ending</li>
+                <li>Hand-poked ink carries deeper intention than machines</li>
+                <li>Sliding scale always — memorial work is sacred, not transactional</li>
+                <li>Ancient wisdom meets contemporary neuroscience</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="process">
+        <div class="container">
+            <h2 class="section-title">The Journey</h2>
+
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-icon">01</div>
+                    <h3>Connect</h3>
+                    <p>Free consultation. Share your story. Assess readiness. No pressure, ever.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-icon">02</div>
+                    <h3>Design</h3>
+                    <p>Co-create symbolism and placement. Virtual or in-person. Your meaning, embodied.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-icon">03</div>
+                    <h3>Ceremony</h3>
+                    <p>Ritual space. Witnesses welcome. Hand-poked with intention. Transform.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="process-icon">04</div>
+                    <h3>Integration</h3>
+                    <p>Ongoing support. Community circles. Carry your story forward.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <div class="container">
+            <h2>Ready to Begin?</h2>
+            <p>Free 30-minute consultation · Sliding scale pricing · Virtual or travel options</p>
+            <a href="https://instagram.com/jcsharratt" class="cta-button" target="_blank">Connect Now</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p><strong>JC SHARRATT</strong></p>
+            <p>PhD Chinese Medicine · Fertility Specialist · Birth & Death Doula</p>
+            <p>Hand-Poked Therapeutic Tattoo Artist</p>
+            <p style="margin-top: 30px;">
+                <a href="https://instagram.com/jcsharratt" target="_blank">@jcsharratt</a>
+            </p>
+            <p style="margin-top: 30px; font-size: 0.9em;">
+                Location Independent · National Reach · Services in Development
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

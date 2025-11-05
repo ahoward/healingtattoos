@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meridian Ink - Therapeutic Tattooing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #FAFAFA;
+            color: #2C3E50;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            border-bottom: 3px solid #3498DB;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2em;
+            font-weight: 600;
+            color: #2C3E50;
+        }
+
+        .credentials {
+            font-size: 0.85em;
+            color: #7F8C8D;
+            text-align: right;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #3498DB 0%, #2980B9 100%);
+            color: white;
+            padding: 80px 30px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .stats {
+            background: white;
+            padding: 60px 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: 700;
+            color: #3498DB;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            color: #7F8C8D;
+        }
+
+        .content {
+            padding: 60px 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section h2 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            color: #2C3E50;
+            font-weight: 600;
+        }
+
+        .section-subtitle {
+            font-size: 1.1em;
+            color: #7F8C8D;
+            margin-bottom: 40px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            border-top: 4px solid #3498DB;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+        }
+
+        .service-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #2C3E50;
+        }
+
+        .service-card p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .service-card .price {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #3498DB;
+            font-weight: 600;
+        }
+
+        .approach {
+            background: #ECF0F1;
+            padding: 60px 30px;
+            margin: 60px -30px;
+        }
+
+        .approach-content {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .approach h2 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .approach-item {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .approach-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .approach-item h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: #2C3E50;
+        }
+
+        .approach-item p {
+            color: #7F8C8D;
+            font-size: 0.95em;
+        }
+
+        .cta {
+            background: white;
+            padding: 60px 30px;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #2C3E50;
+        }
+
+        .cta p {
+            font-size: 1.2em;
+            color: #7F8C8D;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #3498DB;
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .cta-button:hover {
+            background: #2980B9;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: #2C3E50;
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #3498DB;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .credentials {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">Meridian Ink</div>
+            <div class="credentials">
+                Evidence-Based Therapeutic Tattooing<br>
+                Chinese Medicine · Fertility · Doula Care
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1>Therapeutic Tattooing That Heals</h1>
+        <p>
+            Integrating 5,300 years of acupuncture wisdom with modern grief support
+            and trauma-informed care for profound life transitions.
+        </p>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number">80%</div>
+            <div class="stat-label">Ötzi's tattoos match acupoint locations</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">1 in 4</div>
+            <div class="stat-label">Pregnancies end in loss</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">89%</div>
+            <div class="stat-label">Meridian-fascia overlap proven</div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="section">
+            <h2>Clinical Services</h2>
+            <p class="section-subtitle">Evidence-based therapeutic tattooing with specialized support</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Memorial Tattooing</h3>
+                    <p>
+                        Bereavement doula support combined with therapeutic memorial tattoos for
+                        pregnancy loss, stillbirth, infant death, and failed fertility treatments.
+                        Proven psychological benefits for grief integration.
+                    </p>
+                    <div class="price">Sliding Scale: $400-2,500</div>
+                </div>
+
+                <div class="service-card">
+                    <h3>Fertility Support</h3>
+                    <p>
+                        TCM-based fertility program combining auricular acupressure (ear seeds),
+                        virtual consultations, and therapeutic tattooing on fertility-related
+                        acupoints. Research-backed approach.
+                    </p>
+                    <div class="price">Packages from $1,500</div>
+                </div>
+
+                <div class="service-card">
+                    <h3>Touchstone Therapy</h3>
+                    <p>
+                        Tiny therapeutic tattoos (2-5mm) on acupoints as daily mindfulness anchors.
+                        For anxiety, fertility focus, pain relief, or grounding. Quick 30-60 minute
+                        sessions with acupressure training.
+                    </p>
+                    <div class="price">$200-500</div>
+                </div>
+
+                <div class="service-card">
+                    <h3>Legacy Planning</h3>
+                    <p>
+                        Death doula support for pre-death tattoo design. Work with dying individuals
+                        to create meaningful designs as final gifts to family members. Virtual sessions
+                        + travel for final ceremony.
+                    </p>
+                    <div class="price">Custom packages $5,000-10,000</div>
+                </div>
+
+                <div class="service-card">
+                    <h3>Somatic Integration</h3>
+                    <p>
+                        Multi-session trauma-informed tattooing for body reclamation after sexual trauma,
+                        medical trauma, childbirth trauma, or self-harm history. Combines somatic therapy
+                        with therapeutic ink.
+                    </p>
+                    <div class="price">Series packages from $2,500</div>
+                </div>
+
+                <div class="service-card">
+                    <h3>Virtual Consultations</h3>
+                    <p>
+                        Remote TCM diagnosis, fertility support, grief counseling, and therapeutic
+                        design consultation. Serving clients nationwide. Ear seed subscriptions available.
+                    </p>
+                    <div class="price">$75-250/session</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="approach">
+        <div class="approach-content">
+            <h2>Our Therapeutic Framework</h2>
+
+            <div class="approach-grid">
+                <div class="approach-item">
+                    <div class="approach-icon">⚕️</div>
+                    <h3>Clinical Expertise</h3>
+                    <p>PhD Chinese Medicine, fertility specialist, trauma-informed care certification</p>
+                </div>
+
+                <div class="approach-item">
+                    <div class="approach-icon">🔬</div>
+                    <h3>Evidence-Based</h3>
+                    <p>Grounded in acupuncture research, grief psychology, and somatic therapy</p>
+                </div>
+
+                <div class="approach-item">
+                    <div class="approach-icon">🤲</div>
+                    <h3>Trauma-Informed</h3>
+                    <p>Birth & death doula training, grief literacy, nervous system awareness</p>
+                </div>
+
+                <div class="approach-item">
+                    <div class="approach-icon">💰</div>
+                    <h3>Accessible Pricing</h3>
+                    <p>Sliding scale, payment plans, never turn away due to inability to pay</p>
+                </div>
+
+                <div class="approach-item">
+                    <div class="approach-icon">🌍</div>
+                    <h3>Location Independent</h3>
+                    <p>Virtual consultations, quarterly pop-up clinics, travel for special cases</p>
+                </div>
+
+                <div class="approach-item">
+                    <div class="approach-icon">✋</div>
+                    <h3>Hand-Poked Method</h3>
+                    <p>Gentler healing, less trauma, deeper intention, 2-week recovery vs 4+ weeks</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="cta">
+            <h2>Begin Your Healing Journey</h2>
+            <p>Free 30-minute consultation to explore if therapeutic tattooing is right for you</p>
+            <a href="https://instagram.com/jcsharratt" class="cta-button" target="_blank">Connect with JC Sharratt</a>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>JC Sharratt, PhD (Chinese Medicine)</strong></p>
+        <p>Fertility Specialist · Birth & Death Doula · Therapeutic Tattoo Artist</p>
+        <p style="margin-top: 20px;">
+            <a href="https://instagram.com/jcsharratt" target="_blank">@jcsharratt on Instagram</a>
+        </p>
+        <p style="margin-top: 30px; font-size: 0.9em; opacity: 0.8;">
+            Services in development · Sliding scale pricing · National reach via virtual care
+        </p>
+    </footer>
+</body>
+</html>
