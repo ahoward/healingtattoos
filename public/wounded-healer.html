@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wounded Healer - Jessica Sharratt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: #F5F1E8;
+            color: #3A3226;
+            line-height: 1.9;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 80px 30px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid #B8860B;
+        }
+
+        .chiron-symbol {
+            font-size: 4em;
+            margin-bottom: 20px;
+            color: #B8860B;
+        }
+
+        .logo {
+            font-size: 2.5em;
+            font-weight: 300;
+            margin-bottom: 15px;
+            color: #704214;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            font-size: 1.1em;
+            color: #8B6914;
+            font-style: italic;
+        }
+
+        .lead {
+            font-size: 1.35em;
+            line-height: 2;
+            margin-bottom: 60px;
+            text-align: center;
+            color: #5D4E37;
+            font-style: italic;
+        }
+
+        .section {
+            margin-bottom: 70px;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #704214;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.15em;
+            margin-bottom: 25px;
+            color: #4A4A4A;
+        }
+
+        .initiation {
+            background: linear-gradient(135deg, rgba(184, 134, 11, 0.1) 0%, rgba(139, 105, 20, 0.1) 100%);
+            padding: 50px;
+            border-radius: 8px;
+            margin: 60px 0;
+            border-left: 4px solid #B8860B;
+        }
+
+        .initiation h3 {
+            font-size: 1.6em;
+            color: #704214;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .initiation p {
+            font-size: 1.1em;
+            color: #5D4E37;
+        }
+
+        .three-losses {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .loss-marker {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(184, 134, 11, 0.05);
+            border-radius: 8px;
+        }
+
+        .loss-marker .number {
+            font-size: 3em;
+            color: #B8860B;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+
+        .loss-marker .label {
+            font-size: 0.95em;
+            color: #8B6914;
+            font-style: italic;
+        }
+
+        blockquote {
+            font-size: 1.3em;
+            line-height: 1.9;
+            font-style: italic;
+            margin: 70px 0;
+            text-align: center;
+            color: #704214;
+            padding: 0 40px;
+            border-top: 1px solid #B8860B;
+            border-bottom: 1px solid #B8860B;
+            padding: 40px;
+        }
+
+        .offering {
+            margin: 40px 0;
+            padding: 35px;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            border-top: 3px solid #B8860B;
+        }
+
+        .offering h3 {
+            font-size: 1.4em;
+            color: #704214;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .offering p {
+            font-size: 1.05em;
+            color: #5D4E37;
+        }
+
+        .chiron-teaching {
+            background: rgba(112, 66, 20, 0.05);
+            padding: 50px;
+            border-radius: 8px;
+            margin: 70px 0;
+        }
+
+        .chiron-teaching h3 {
+            font-size: 1.7em;
+            color: #704214;
+            margin-bottom: 25px;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .chiron-teaching ul {
+            list-style: none;
+            font-size: 1.1em;
+            line-height: 2.3;
+            color: #5D4E37;
+        }
+
+        .chiron-teaching ul li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .chiron-teaching ul li::before {
+            content: '⟐';
+            position: absolute;
+            left: 0;
+            color: #B8860B;
+            font-size: 1.3em;
+        }
+
+        .transformation {
+            text-align: center;
+            margin: 80px 0;
+            padding: 60px 0;
+            border-top: 1px solid rgba(184, 134, 11, 0.3);
+            border-bottom: 1px solid rgba(184, 134, 11, 0.3);
+        }
+
+        .transformation .arrow {
+            font-size: 2.5em;
+            color: #B8860B;
+            margin: 20px 0;
+        }
+
+        .transformation .from, .transformation .to {
+            font-size: 1.2em;
+            color: #704214;
+            margin: 10px 0;
+        }
+
+        .contact {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 60px;
+            border-top: 2px solid #B8860B;
+        }
+
+        .contact a {
+            display: inline-block;
+            padding: 18px 45px;
+            background: #B8860B;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1.05em;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        .contact a:hover {
+            background: #704214;
+            transform: translateY(-2px);
+        }
+
+        .contact p {
+            margin-top: 30px;
+            font-size: 0.95em;
+            color: #8B6914;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 50px 20px;
+            }
+
+            .three-losses {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .chiron-symbol {
+                font-size: 3em;
+            }
+
+            .initiation, .chiron-teaching {
+                padding: 30px;
+            }
+
+            blockquote {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="chiron-symbol">⚷</div>
+            <h1 class="logo">The Wounded Healer</h1>
+            <p class="tagline">When Loss Becomes Medicine</p>
+        </header>
+
+        <p class="lead">
+            Chiron is the asteroid that represents our deepest wound—the one that never fully heals,
+            but becomes our greatest source of healing for others.
+        </p>
+
+        <div class="section">
+            <p>
+                I'm Jessica. Three miscarriages initiated me into Chiron's path. Each loss cracked me
+                open a little more. Each empty womb taught me something I couldn't have learned any
+                other way. Each baby's brief soul whispered: "This is your medicine. This pain will
+                heal others."
+            </p>
+
+            <p>
+                I fought it at first. I didn't want to be the wounded healer. I wanted to be a mother
+                with living children. But my chart doesn't lie—my Chiron placement shows exactly this:
+                loss as initiation, grief as teacher, wounding as preparation for sacred work.
+            </p>
+
+            <p>
+                Now I understand. My three babies came briefly, by soul agreement, to prepare me to
+                hold space for YOU. To witness your loss with the authority of someone who's been
+                shattered. To offer evolutionary astrology readings that explain the soul purpose of
+                your baby's brief incarnation. To create memorial tattoos that honor the sacred wound
+                we share.
+            </p>
+        </div>
+
+        <div class="three-losses">
+            <div class="loss-marker">
+                <div class="number">I</div>
+                <div class="label">First Shattering</div>
+            </div>
+            <div class="loss-marker">
+                <div class="number">II</div>
+                <div class="label">Deeper Breaking</div>
+            </div>
+            <div class="loss-marker">
+                <div class="number">III</div>
+                <div class="label">Full Initiation</div>
+            </div>
+        </div>
+
+        <div class="initiation">
+            <h3>The Chiron Initiation</h3>
+            <p>
+                In mythology, Chiron was a centaur wounded by a poisoned arrow. As an immortal, he couldn't
+                die from the wound, but couldn't heal it either. He lived with chronic pain and became the
+                greatest healer and teacher of his time—BECAUSE of his wound, not despite it.
+            </p>
+            <p style="margin-top: 20px;">
+                That's us. Bereaved parents who can't "get over" our losses, but can transform them into
+                medicine. The wound that won't heal becomes the source of healing we offer others.
+            </p>
+        </div>
+
+        <blockquote>
+            "Your wound is your medicine. Your loss is your initiation. Your baby's brief life
+            prepared you for something you couldn't have learned any other way."
+        </blockquote>
+
+        <div class="section">
+            <h2>The Work I Offer</h2>
+
+            <div class="offering">
+                <h3>Chiron Chart Reading + Memorial Tattoo</h3>
+                <p>
+                    We read your Chiron placement—where your soul chose to be wounded in this lifetime. We
+                    explore how your baby's loss serves that wound's transformation into medicine. We create
+                    a memorial tattoo that marks your initiation as wounded healer. This is for bereaved
+                    parents ready to alchemize pain into purpose.
+                </p>
+            </div>
+
+            <div class="offering">
+                <h3>Soul Contract Reading for Your Baby</h3>
+                <p>
+                    Your baby's chart reveals their soul's brief mission. What did they come to teach? What
+                    evolutionary purpose did they serve? How did their soul agree to activate your Chiron
+                    wound? We read their chart, understand the agreement, and create permanent marking that
+                    honors the soul contract.
+                </p>
+            </div>
+
+            <div class="offering">
+                <h3>Wounded Healer Integration Series</h3>
+                <p>
+                    Multi-session work for those being called into healing work BECAUSE of their loss. We
+                    explore your Chiron placement, your baby's role in your initiation, and how to step
+                    into wounded healer identity. Chart work, grief integration, and memorial tattoo that
+                    marks your transformation from bereaved parent to medicine carrier.
+                </p>
+            </div>
+
+            <div class="offering">
+                <h3>Chiron Return Ceremony</h3>
+                <p>
+                    Chiron returns to its natal position around age 50—a profound healing crisis and
+                    spiritual initiation. If your pregnancy loss coincides with Chiron return (or other
+                    Chiron transits), we work with the timing cosmically. Ceremonial tattoo during this
+                    sacred window of transformation.
+                </p>
+            </div>
+        </div>
+
+        <div class="chiron-teaching">
+            <h3>What Chiron Teaches About Loss</h3>
+            <ul>
+                <li>Your deepest wound becomes your greatest gift to others</li>
+                <li>The pain that won't heal transforms into medicine</li>
+                <li>Soul chose this specific wound for evolutionary purpose</li>
+                <li>Grief initiation prepares you for sacred service</li>
+                <li>Your baby's soul participated in your wounding/healing</li>
+                <li>The loss that breaks you open also births the healer within</li>
+                <li>Chiron's path: from victim to wounded healer to medicine carrier</li>
+            </ul>
+        </div>
+
+        <div class="transformation">
+            <div class="from">Bereaved Parent</div>
+            <div class="arrow">⟱</div>
+            <div class="to">Wounded Healer</div>
+            <div class="arrow">⟱</div>
+            <div class="from">Medicine Carrier</div>
+        </div>
+
+        <div class="section">
+            <h2>Jessica's Chiron Journey</h2>
+
+            <p>
+                My Chiron is in [placement]. My chart showed me, with devastating clarity, that these three
+                losses weren't random tragedy—they were my initiation. My babies' souls agreed, before birth,
+                to come briefly and wound me in exactly the way my soul needed to be broken open.
+            </p>
+
+            <p>
+                I bring this to the work: PhD in Chinese Medicine (body as energy system). Evolutionary
+                astrologer (reading soul contracts and Chiron placements). Death doula (holding space for
+                loss and transformation). Hand-poke tattoo artist (permanent marking of initiation). And
+                most importantly—fellow wounded healer who's walked Chiron's path.
+            </p>
+
+            <p>
+                I don't offer this work from professional distance. I offer it from the authority of three
+                shattering initiations. From a chart that predicted exactly these losses. From a Chiron
+                placement that's transformed my wound into medicine.
+            </p>
+        </div>
+
+        <blockquote>
+            "Not everyone is called to be a wounded healer. But if you're here, if this resonates,
+            if your loss feels like initiation—then Chiron is calling you."
+        </blockquote>
+
+        <div class="section">
+            <h2>How We Work</h2>
+
+            <p>
+                We start with chart reading. Your Chiron placement. Your baby's chart. The soul contracts
+                between you. We explore how this loss serves your soul's evolution. How your wound is
+                preparing you to heal others (if you choose that path).
+            </p>
+
+            <p>
+                Then we design memorial tattoo that marks your Chiron initiation. Maybe the Chiron symbol
+                itself. Maybe your baby's astrological signature. Maybe imagery of wounding and healing.
+                The design emerges from understanding the evolutionary purpose.
+            </p>
+
+            <p>
+                We time the tattoo ceremony cosmically—meaningful transits, Chiron aspects, your baby's
+                dates. Hand-poke method. Sacred space. Witnessing your transformation from bereaved parent
+                to wounded healer.
+            </p>
+        </div>
+
+        <div class="initiation">
+            <h3>Pricing & Philosophy</h3>
+            <p>
+                Chiron work packages (chart reading + memorial tattoo): $900-3,500, sliding scale always.
+                This includes full evolutionary astrology reading focused on Chiron placement, soul contract
+                exploration, design process, ceremonial tattoo, and integration support.
+            </p>
+            <p style="margin-top: 20px;">
+                Wounded healers support each other. If money is the barrier, we'll find a way. Payment
+                plans. Sliding scale. Some sessions as seva. Chiron doesn't care about your bank account—only
+                whether you're ready to transform your wound into medicine.
+            </p>
+        </div>
+
+        <div class="contact">
+            <a href="https://instagram.com/jcsharratt" target="_blank">Begin Chiron Work</a>
+            <p>
+                @jcsharratt · Free consultation<br>
+                Jessica Sharratt · Evolutionary Astrologer · Wounded Healer · Bereaved Mother
+            </p>
+        </div>
+    </div>
+</body>
+</html>

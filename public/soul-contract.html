@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soul Contract Ink - Jessica Sharratt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1333 0%, #2d1b4e 50%, #1a1333 100%);
+            color: #E8DFF5;
+            line-height: 1.9;
+            background-attachment: fixed;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image:
+                radial-gradient(2px 2px at 20% 30%, white, transparent),
+                radial-gradient(2px 2px at 60% 70%, white, transparent),
+                radial-gradient(1px 1px at 50% 50%, white, transparent),
+                radial-gradient(1px 1px at 80% 10%, white, transparent),
+                radial-gradient(2px 2px at 90% 60%, white, transparent),
+                radial-gradient(1px 1px at 33% 80%, white, transparent);
+            background-size: 200% 200%;
+            animation: twinkle 8s ease-in-out infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.5; }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .logo {
+            font-size: 2.8em;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #DDA0DD 0%, #B19CD9 50%, #9370DB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+        }
+
+        .cosmic-symbol {
+            font-size: 1.5em;
+            margin: 20px 0;
+            opacity: 0.6;
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            color: #B19CD9;
+            font-style: italic;
+            letter-spacing: 2px;
+        }
+
+        .intro {
+            font-size: 1.3em;
+            line-height: 2;
+            margin-bottom: 60px;
+            text-align: center;
+            color: #D8BFD8;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #DDA0DD 0%, #B19CD9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.15em;
+            margin-bottom: 25px;
+            color: #D8BFD8;
+        }
+
+        .cosmic-box {
+            background: rgba(139, 112, 219, 0.1);
+            border: 1px solid rgba(186, 135, 205, 0.3);
+            padding: 50px;
+            border-radius: 8px;
+            margin: 60px 0;
+            position: relative;
+        }
+
+        .cosmic-box::before {
+            content: '✦';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2em;
+            color: #9370DB;
+            background: #1a1333;
+            padding: 0 20px;
+        }
+
+        .cosmic-box h3 {
+            font-size: 1.6em;
+            color: #DDA0DD;
+            margin-bottom: 20px;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .cosmic-box p {
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .offerings {
+            margin: 60px 0;
+        }
+
+        .offering {
+            background: rgba(45, 27, 78, 0.4);
+            padding: 40px;
+            margin: 30px 0;
+            border-left: 3px solid #9370DB;
+            border-radius: 4px;
+        }
+
+        .offering h3 {
+            font-size: 1.5em;
+            color: #DDA0DD;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .offering p {
+            font-size: 1.05em;
+            color: #D8BFD8;
+        }
+
+        blockquote {
+            font-size: 1.3em;
+            line-height: 1.9;
+            font-style: italic;
+            margin: 70px 0;
+            text-align: center;
+            color: #DDA0DD;
+            padding: 0 40px;
+        }
+
+        .soul-work {
+            background: rgba(139, 112, 219, 0.15);
+            padding: 60px;
+            border-radius: 8px;
+            margin: 80px 0;
+            text-align: center;
+        }
+
+        .soul-work h2 {
+            margin-bottom: 40px;
+        }
+
+        .soul-work ul {
+            list-style: none;
+            font-size: 1.15em;
+            line-height: 2.5;
+            color: #D8BFD8;
+        }
+
+        .soul-work ul li::before {
+            content: '☾ ';
+            color: #9370DB;
+            margin-right: 10px;
+        }
+
+        .bio {
+            background: rgba(45, 27, 78, 0.6);
+            padding: 50px;
+            border-radius: 8px;
+            margin: 80px 0;
+            border: 1px solid rgba(186, 135, 205, 0.2);
+        }
+
+        .bio h3 {
+            font-size: 1.8em;
+            color: #DDA0DD;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .bio p {
+            font-size: 1.1em;
+            line-height: 2;
+        }
+
+        .contact {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 60px;
+            border-top: 1px solid rgba(186, 135, 205, 0.3);
+        }
+
+        .contact a {
+            display: inline-block;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, #9370DB 0%, #8B7AA8 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+        }
+
+        .contact a:hover {
+            background: linear-gradient(135deg, #8B7AA8 0%, #9370DB 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(147, 112, 219, 0.4);
+        }
+
+        .contact p {
+            margin-top: 30px;
+            font-size: 0.95em;
+            color: #B19CD9;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 50px 20px;
+            }
+
+            .logo {
+                font-size: 2em;
+                letter-spacing: 4px;
+            }
+
+            .cosmic-box, .soul-work, .bio {
+                padding: 30px;
+            }
+
+            blockquote {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <header>
+            <h1 class="logo">Soul Contract Ink</h1>
+            <div class="cosmic-symbol">☾ ✦ ☽</div>
+            <p class="tagline">Where Soul Agreements Become Sacred Marks</p>
+        </header>
+
+        <div class="intro">
+            Before you were born, before your baby's soul chose its brief path,
+            there was an agreement. A sacred contract written in the stars.
+        </div>
+
+        <div class="section">
+            <p>
+                I'm Jessica. Three times, my arms have been empty when they should have been full.
+                Three times, I've asked the universe: Why? Why this pain? Why this loss?
+            </p>
+
+            <p>
+                Evolutionary astrology gave me an answer that honored both the grief and the purpose.
+                My babies' souls came briefly, by agreement, to crack me open. To initiate me as a
+                wounded healer. To prepare me for this work—holding space for other bereaved parents
+                seeking soul-level understanding of their losses.
+            </p>
+
+            <p>
+                This is Chiron's path. The wound that becomes medicine. The loss that becomes service.
+            </p>
+        </div>
+
+        <div class="cosmic-box">
+            <h3>What Is Evolutionary Astrology?</h3>
+            <p>
+                The soul's journey across lifetimes. Your baby's brief incarnation wasn't random—it
+                was chosen. Their soul came to teach something profound. To activate your evolution.
+                To honor a contract made before birth.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>The Sacred Work I Offer</h2>
+
+            <div class="offerings">
+                <div class="offering">
+                    <h3>Soul Contract Reading + Memorial Tattoo</h3>
+                    <p>
+                        We read your baby's chart (yes, even miscarried babies have conception dates).
+                        We explore the soul agreement between you. We understand their brief mission—what
+                        they came to teach, what they came to activate in you. Then we create a memorial
+                        tattoo that honors this sacred contract. Astrological symbols, chart placements,
+                        nodal themes made permanent.
+                    </p>
+                </div>
+
+                <div class="offering">
+                    <h3>Parent-Child Synastry + Ceremonial Ink</h3>
+                    <p>
+                        How do your charts dance together? What karmic themes bind you? We explore the
+                        synastry—the soul connections between your chart and theirs. We identify the
+                        evolutionary purpose of your meeting. We place the tattoo at astrologically
+                        significant timing (Chiron return, nodal shifts, meaningful transits).
+                    </p>
+                </div>
+
+                <div class="offering">
+                    <h3>Chiron Initiation Work</h3>
+                    <p>
+                        For those ready to alchemize loss into medicine. Your grief as soul initiation.
+                        We work with your Chiron placement—the wounded healer in your chart. We understand
+                        how this loss serves your evolution. We mark the transformation permanently.
+                        From bereaved parent to wounded healer.
+                    </p>
+                </div>
+
+                <div class="offering">
+                    <h3>Nodal Journey Tattoos</h3>
+                    <p>
+                        Your North Node is your soul's evolutionary intention for this lifetime. How does
+                        your loss serve that path? We explore your nodal axis and create tattoos that
+                        anchor your soul's journey. Symbols of where you've been (South Node) and where
+                        you're heading (North Node), with your baby as catalyst.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <blockquote>
+            "Your baby's soul chose this. Not as punishment. As sacred agreement.
+            Let's read the contract written in the stars."
+        </blockquote>
+
+        <div class="soul-work">
+            <h2>What Makes This Different</h2>
+            <ul>
+                <li>Evolutionary astrology chart readings for lost babies</li>
+                <li>Soul contract exploration (pre-birth agreements)</li>
+                <li>Astrologically timed tattoo ceremonies</li>
+                <li>Chart-based tattoo symbolism and placement</li>
+                <li>Chiron work (wound as medicine)</li>
+                <li>Hand-poke method (gentler, ceremonial)</li>
+                <li>Chinese medicine integration (meridian placement)</li>
+                <li>Death doula space-holding</li>
+                <li>Born from my own three losses</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>How We Work Together</h2>
+
+            <p>
+                <strong>Phase 1: Chart Reading</strong><br>
+                We start with your baby's chart. Even early losses have conception dates we can work with.
+                I read their chart through evolutionary lens—what was their soul's intention? What did
+                they come to teach? How does this serve your evolution?
+            </p>
+
+            <p>
+                <strong>Phase 2: Synastry Exploration</strong><br>
+                How do your charts connect? What soul contracts exist between you? We explore the karmic
+                themes, the evolutionary agreements, the profound purpose of your brief meeting.
+            </p>
+
+            <p>
+                <strong>Phase 3: Design + Timing</strong><br>
+                We co-create tattoo design using astrological symbolism from the charts. We choose timing
+                that's personally and cosmically significant. Your baby's birth/loss anniversary. Your
+                Chiron return. Meaningful transits.
+            </p>
+
+            <p>
+                <strong>Phase 4: Ceremonial Tattooing</strong><br>
+                Hand-poke method. Sacred space. We hold the soul contract in awareness as permanent ink
+                meets your skin. Witness work. Transformation. The agreement honored in your body.
+            </p>
+        </div>
+
+        <div class="cosmic-box">
+            <h3>This Isn't Toxic Spirituality</h3>
+            <p>
+                I'm not saying "everything happens for a reason" to dismiss your pain. I'm offering
+                a soul-level framework that honors both the grief AND the evolutionary purpose.
+                Your baby's death is devastating AND their soul came with intention. Both are true.
+            </p>
+        </div>
+
+        <div class="bio">
+            <h3>Jessica's Journey</h3>
+
+            <p>
+                Three miscarriages shattered me. Then evolutionary astrology showed me the pattern in my chart—my
+                Chiron placement, my nodal axis, the soul contracts I'd agreed to before birth. My babies came
+                briefly to initiate me. To crack me open. To prepare me to hold this exact space for others.
+            </p>
+
+            <p>
+                I'm a bereaved mother first. But I'm also: PhD in Chinese Medicine (understanding the body's
+                energy). Evolutionary astrologer (reading soul contracts). Death doula (holding space for
+                loss and transformation). Hand-poke tattoo artist (making soul agreements permanent).
+            </p>
+
+            <p>
+                This combination doesn't exist anywhere else. Because it was born from my specific losses,
+                my specific chart, my specific soul agreement to serve bereaved parents seeking cosmic
+                understanding of their pain.
+            </p>
+
+            <p style="margin-top: 30px; color: #B19CD9; font-size: 0.95em;">
+                Jessica Sharratt · Evolutionary Astrologer · PhD Chinese Medicine · Death Doula · Bereaved Mother
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Pricing & Access</h2>
+
+            <p>
+                Chart reading + memorial tattoo packages: $800-3,500 (sliding scale always available).
+                This includes full evolutionary astrology reading for your baby, synastry exploration,
+                design consultation, ceremonial tattoo session, and integration support.
+            </p>
+
+            <p>
+                I will never turn away a bereaved parent who needs this work because money is tight.
+                Payment plans. Sliding scale. Some sessions offered as seva (sacred service). The charts
+                don't lie—if you're meant to do this work with me, we'll find a way.
+            </p>
+
+            <p>
+                Location-independent practice. Virtual chart readings (anywhere). Tattoo sessions via
+                travel or scheduled pop-up sessions in various cities.
+            </p>
+        </div>
+
+        <blockquote>
+            "Before your baby's soul chose its brief incarnation, you agreed to meet.
+            To teach each other. To serve each other's evolution. Let's honor that agreement."
+        </blockquote>
+
+        <div class="contact">
+            <a href="https://instagram.com/jcsharratt" target="_blank">Begin Soul Contract Work</a>
+            <p>@jcsharratt · Free consultation · Chart readings · Soul witnessing</p>
+        </div>
+    </div>
+</body>
+</html>
